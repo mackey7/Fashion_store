@@ -1,0 +1,62 @@
+.topMenu {
+    background: #000;
+    color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    .topMenu--telephone {
+        text-transform: uppercase;
+    }
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
+    select {
+        background: #000;
+        color: #fff;
+        border: none;
+        border-left: 1px solid rgb(138, 136, 136);
+        border-right: 1px solid rgb(138, 136, 136);
+        padding: 20px;
+    }
+    .topMenu-account {
+        a,
+        i {
+            padding: 20px;
+            border-right: 1px solid rgb(138, 136, 136);
+        }
+        a {
+            text-transform: uppercase;
+        }
+        .search-container {
+            left: 0;
+            position: absolute;
+            width: 100%;
+            height: calc(100% - 50px);
+            background: rgba(0, 0, 0, 0.055);
+            .search-bar {
+                top: 50%;
+                left: 50%;
+                position: absolute;
+                margin-left: -200px;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                input[type=text] {
+                    width: 500px;
+                    border: none;
+                    border-bottom: 1px solid rgb(0, 0, 0);
+                    padding: 20px;
+                }
+                input[type=button] {
+                    padding: 20px;
+                }
+            }
+        }
+    }
+}

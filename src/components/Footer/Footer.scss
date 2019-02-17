@@ -1,0 +1,37 @@
+$fontColor: rgb(200, 200, 200);
+.footer-menu {
+    background: rgb(0, 0, 0);
+    padding: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    ul {
+        li {
+            a {
+                color: $fontColor;
+                text-decoration: none;
+                padding-right: 10px;
+            }
+        }
+    }
+    .copyright {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        color: $fontColor;
+        span {
+            padding: 5px 0;
+        }
+    }
+}
+
+;

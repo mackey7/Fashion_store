@@ -6,14 +6,14 @@ export default class Slider extends Component {
         return (
             <section className="slider-container">
                 <div>
-                    <div><i class="fas fa-chevron-left"></i></div>
-                    <figure>
-                        <img src="../../images/slider.png" alt="" />
+                    <div className="arrow-left"><i class="fas fa-chevron-left"></i></div>
+                    <figure >
+                        <img className="slide-image" src="../../images/slider.png" alt="" />
                     </figure>
 
-                    <div><i class="fas fa-chevron-right"></i></div>
+                    <div className="arrow-right"><i class="fas fa-chevron-right"></i></div>
                 </div>
-                <div>
+                <div className="slider-dots-container">
                     <i class="fas fa-circle"></i>
                     <i class="fas fa-circle"></i>
                     <i class="fas fa-circle"></i>

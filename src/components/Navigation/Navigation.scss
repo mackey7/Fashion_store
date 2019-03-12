@@ -10,8 +10,9 @@
     -ms-flex-align: center;
     align-items: center;
     padding: 10px 0px;
-    height: 100px;
-    width: 100%;
+    min-height: 100px;
+    min-width: 100%;
+    margin: 20px;
     &--logo {
         font-weight: 800;
         font-size: 34px;
@@ -25,11 +26,16 @@
         display: flex;
         li {
             list-style: none;
-            padding-left: 30px;
+            padding-right: 30px;
             a {
                 text-decoration: none;
-                color: #000000;
-                font-weight: 500;
+                color: #b65656;
+                font-weight: 900;
+                font-size: 18px;
+                &:hover {
+                    color: #8d1c1c;
+                    text-decoration: underline;
+                }
             }
         }
     }
@@ -122,4 +128,18 @@
 
 .bar-cart-container {
     position: relative;
+}
+
+@media screen and (max-width: 980px) {
+    .top-navigation {
+        margin-bottom: 20px;
+        height: 100%;
+        ul,
+        .bar-cart-container {
+            margin-top: 30px;
+        }
+        .bar-cart-container {
+            margin-right: 30px;
+        }
+    }
 }

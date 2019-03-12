@@ -2,6 +2,8 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
     -ms-flex-pack: distribute;
     justify-content: space-around;
     -webkit-box-align: center;
@@ -26,6 +28,7 @@
     }
     .bar-expense,
     .bar-cart {
+        cursor: pointer;
         border: 1px solid rgb(73, 72, 72);
         padding: 10px;
         width: 300px;
@@ -35,8 +38,20 @@
         -webkit-box-pack: justify;
         -ms-flex-pack: justify;
         justify-content: space-between;
+        z-index: 1;
+    }
+    .cart-details {
+        position: absolute;
+        border: 1px solid rgb(73, 72, 72);
+        top: 40px;
+        left: 0;
+        z-index: 3;
+        width: 300px;
+        padding: 10px;
+        background: #fff;
     }
     .bar-expense {
+        z-index: 1;
         color: #747474;
         background-color: rgb(219, 218, 218);
         div>span:nth-child(1) {
@@ -47,4 +62,8 @@
             padding-left: 10px;
         }
     }
+}
+
+.bar-cart-container {
+    position: relative;
 }

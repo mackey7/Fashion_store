@@ -1,36 +1,88 @@
-.slider-container {
-    position: relative;
+.Slider {
     width: 100%;
-    max-height: 100%;
-    .slide-image {
-        width: 100%;
-    }
-    .arrow-right,
-    .arrow-left {
-        position: absolute;
-        top: 30%;
-        .fas {
-            font-size: 1em;
-            background: #fff;
-            padding: 1em 1em;
-            cursor: pointer;
-        }
-    }
-    .arrow-right {
-        right: 0;
+    height: 100%;
+    position: relative;
+}
+
+.slider_arrow-left,
+.slider_arrow-right {
+    cursor: pointer;
+    position: absolute;
+    color: rgb(223, 97, 97);
+    font-size: 30px;
+    top: 30%;
+    :hover {
+        color: rgb(185, 62, 62);
     }
 }
 
-.slider-dots-container {
+.slider_arrow-left {
+    left: 0;
+}
+
+.slider_arrow-right {
+    right: 0;
+}
+
+.Slider_item {
+    width: 100%;
+    height: 100%;
+}
+
+.slide_item {
+    margin-right: auto;
+    margin-left: auto;
+    display: none;
+    max-width: 100%;
+    list-style-type: none;
+    text-align: center;
+    @media(max-width: 992px) {
+        padding-right: 60px;
+        padding-left: 60px;
+    }
+    &--active {
+        display: block;
+    }
+}
+
+.dot_container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    padding: 20px;
-    .fas {
-        margin-right: 10px;
-        color: rgb(158, 158, 158);
+    margin-top: 20px;
+    li {
+        list-style: none;
+        &:nth-of-type(n+20) {
+            margin-left: 9px;
+        }
+    }
+}
+
+.dot {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-color: rgb(233, 31, 31);
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+    opacity: 0.35;
+    -webkit-transition: opacity 0.15s cubic-bezier(0.4, 0, 1, 1);
+    transition: opacity 0.15s cubic-bezier(0.4, 0, 1, 1);
+    &:hover {
+        opacity: 0.5;
+    }
+    &--active {
+        &,
+        &:hover {
+            opacity: 0.85
+        }
     }
 }

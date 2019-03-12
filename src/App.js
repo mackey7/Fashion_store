@@ -6,16 +6,29 @@ import Products from './components/Products/Products.jsx';
 import Footer from './components/Footer/Footer.jsx';
 import './App.css';
 
+const carouselSlidesData = [
+  {
+    img: "http://zow.lublin.eu/wp-content/themes/the-wp/images/slider/slider4.jpg",
+    alt: "zdjęcie"
+  },
+  {
+    img: "https://vignette.wikia.nocookie.net/thefutureofeuropes/images/d/d7/Adolf-hitler-620-638970380.jpg",
+    alt: "zdjęcie"
+  }
+
+];
+
+
 class App extends Component {
   render() {
     return (
-      <div >
+      <React.Fragment >
         <TopMenu />
         <Navigation />
-        <Slider />
+        <Slider slides={carouselSlidesData} />
         <Products />
         <Footer />
-      </div>
+      </React.Fragment >
     );
   }
 }

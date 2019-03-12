@@ -16,7 +16,7 @@ export default class Navigation extends Component {
     render() {
         return (
             <nav className="top-navigation">
-                <p> Logo</p>
+                <span className="top-navigation--logo">LOGO</span>
                 <ul>
                     <li><a href="">new</a></li>
                     <li><a href="">designers</a></li>

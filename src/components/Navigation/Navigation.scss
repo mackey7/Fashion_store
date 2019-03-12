@@ -12,6 +12,13 @@
     padding: 10px 0px;
     height: 100px;
     width: 100%;
+    &--logo {
+        font-weight: 800;
+        font-size: 34px;
+        background: -webkit-linear-gradient(rgb(214, 37, 37), rgb(27, 87, 197));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
     ul {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -59,7 +66,7 @@
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
-            max-height: 100px;
+            max-height: 300px;
             overflow: auto;
             table {
                 tr {

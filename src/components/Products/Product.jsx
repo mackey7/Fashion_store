@@ -6,10 +6,10 @@ export default class Products extends Component {
         return (
             <div className="product-container">
                 <figure>
-                    <img src="../../images/dress.png" alt="" />
+                    <img src={this.props.img} alt={this.props.alt} />
                 </figure>
-                <span>Nadia dress</span>
-                <span>$64.95</span>
+                <span>{this.props.name}</span>
+                <span>{this.props.price}{" "}{this.props.currency}</span>
                 <input type="button" value="add to cart +" />
             </div>
         )

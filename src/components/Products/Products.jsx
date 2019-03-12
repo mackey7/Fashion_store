@@ -6,10 +6,16 @@ export default class Products extends Component {
     render() {
         return (
             <section className="products-container">
-                <Product />
-                <Product />
-                <Product />
-                <Product />
+                {this.props.product.map((item, index) => (
+                    <Product
+                        img={item.img}
+                        name={item.name}
+                        price={item.price}
+                        currency={item.currency}
+                        quantity={item.quantity}
+                        alt={item.alt}
+                    />
+                ))}
             </section>
         )
     }

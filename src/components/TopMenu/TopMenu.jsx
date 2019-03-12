@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SearchBar from './SerachBar.jsx'
 import './topMenu.scss';
 
 export default class TopMenu extends Component {
@@ -12,10 +13,6 @@ export default class TopMenu extends Component {
         this.setState({ search: !this.state.search })
     }
     render() {
-        let styles = {
-            display: this.state.search ? "block" : "none"
-
-        };
         return (
             <div className="topMenu">
                 <a className="topMenu--telephone" href="tel:+88-23-4567"> custom care: 88-23-4567</a>
@@ -27,15 +24,9 @@ export default class TopMenu extends Component {
                     </select>
                     <a href="#">  my account</a>
                     <i onClick={this.handleClick} class="fas fa-search"></i>
-                    <div style={styles} className="search-container">
-                        <div className='search-bar'>
-                            <input style={styles} type="text" placeholder="search..." />
-                            <input style={styles} type="button" value="Search" />
+                    {this.state.search ?
+                        <SearchBar /> : null}
 
-
-                        </div>
-
-                    </div>
 
                 </div>
             </div>

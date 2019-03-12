@@ -4,7 +4,7 @@ import './Navigation.scss'
 
 export default class Navigation extends Component {
     state = {
-        cartDetails: true,
+        cartDetails: false,
     }
     handleClick = () => {
         this.setState(state => ({

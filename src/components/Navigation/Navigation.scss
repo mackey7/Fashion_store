@@ -49,6 +49,55 @@
         width: 300px;
         padding: 10px;
         background: #fff;
+        &--title {
+            text-align: center;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 20px;
+        }
+        &--item {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            max-height: 100px;
+            overflow: auto;
+            table {
+                tr {
+                    td {
+                        img {
+                            width: 100px;
+                        }
+                    }
+                }
+            }
+        }
+        &--summary {
+            width: 100%;
+            height: 100%;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            a {
+                color: #fff;
+                font-weight: 800;
+                font-size: 18px;
+                padding: 20px;
+                text-decoration: none;
+                text-align: center;
+                background: rgb(93, 194, 67);
+                &:hover {
+                    background: rgb(66, 144, 46);
+                    -webkit-transition: 1s;
+                    -webkit-transition: 0.1s;
+                    -webkit-transition: 0.8s;
+                    transition: 0.8s;
+                }
+            }
+        }
     }
     .bar-expense {
         z-index: 1;

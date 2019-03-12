@@ -2,23 +2,56 @@ import React from 'react';
 
 const CartDetails = () => {
     return (
-        <div class="cart-details">
-            <span>My Cart</span>
-            <div class="cart-details_item">
-                <figure>
-                    <img src="" alt="" />
-                </figure>
-                <div>
-                    <p>Nazwa produktu</p>
-                    <span>cena</span>
-                    <span>1</span>
-                </div>
-                <div>
-                    <span>300 PLN</span>
-                    <span>Usuń</span>
-                </div>
+        <div id="item" class="cart-details" >
+            <p class="cart-details--title">My Cart</p>
+            <div class="cart-details--item">
+                <table >
+                    <tr>
+                        <td><img src=" http://zow.lublin.eu/wp-content/themes/the-wp/images/slider/slider4.jpg" alt="" /></td>
+
+                        <td>
+                            <p>Nazwa produktu</p>
+                            <span>cena</span>
+                            <span>1</span>
+                        </td>
+
+                        <td>
+                            <span>300 PLN</span>
+                            <span>Usuń</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src=" http://zow.lublin.eu/wp-content/themes/the-wp/images/slider/slider4.jpg" alt="" /></td>
+
+                        <td>
+                            <p>Nazwa produktu</p>
+                            <span>cena</span>
+                            <span>1</span>
+                        </td>
+
+                        <td>
+                            <span>300 PLN</span>
+                            <span>Usuń</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src=" http://zow.lublin.eu/wp-content/themes/the-wp/images/slider/slider4.jpg" alt="" /></td>
+
+                        <td>
+                            <p>Nazwa produktu</p>
+                            <span>cena</span>
+                            <span>1</span>
+                        </td>
+
+                        <td>
+                            <span>300 PLN</span>
+                            <span>Usuń</span>
+                        </td>
+                    </tr>
+                </table>
+
             </div>
-            <div>
+            <div class="cart-details--summary">
                 <table>
                     <tr>
                         <td>Przesyłka</td>
@@ -31,7 +64,7 @@ const CartDetails = () => {
                 </table>
                 <a href="#">CART</a>
             </div>
-        </div>
+        </div >
 
 
     )

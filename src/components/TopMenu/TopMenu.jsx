@@ -1,25 +1,37 @@
 import React, { Component } from 'react';
-import SearchBar from './SerachBar.jsx'
+import SearchBar from './SerachBar.jsx';
 import './topMenu.scss';
+
 
 export default class TopMenu extends Component {
     constructor() {
         super();
         this.state = {
-            search: false
+            search: false,
+            menuBar: true,
         }
     }
 
     handleClick = () => {
         this.setState(state => ({ search: !state.search }))
     }
+    diplayMenu = () => {
+        this.setState(state => ({ menuBar: !state.menuBar }))
+    }
 
     render() {
+        const menuStyle = {
+            display: this.state.menuBar ? 'flex' : 'none'
+        }
         return (
             <div className="topMenu" >
-                <a className="topMenu--telephone" href="tel:+88-23-4567"> custom care: 88-23-4567</a>
 
-                <div className="topMenu-account">
+                <a className="topMenu--telephone" href="tel:+88-23-4567"> custom care: 88-23-4567</a>
+                <div onClick={this.diplayMenu} className="menu-bar">
+                    {this.state.menuBar ? <i class="fas fa-times"></i> : <i class="fas fa-bars"></i>}
+                </div>
+
+                <div className="topMenu-account" style={menuStyle} >
                     <select>
                         <option value="$US">$US</option>
                         <option value="pln">PLN</option>
@@ -28,6 +40,7 @@ export default class TopMenu extends Component {
                     <i onClick={this.handleClick} class="fas fa-search"></i>
                     {this.state.search ? <SearchBar /> : null}
                 </div>
+
             </div>
         )
     }

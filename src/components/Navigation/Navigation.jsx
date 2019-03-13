@@ -40,7 +40,7 @@ export default class Navigation extends Component {
 
                     </div>
                     {this.state.cartDetails ?
-                        <CartDetails /> : null}
+                        <CartDetails cart={this.props.cart} /> : null}
 
 
                 </div>

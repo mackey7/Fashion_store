@@ -10,7 +10,7 @@ export default class Products extends Component {
                 </figure>
                 <span>{this.props.name}</span>
                 <span>{this.props.price}{" "}{this.props.currency}</span>
-                <input onClick={this.props.onClick(this.props.id)} type="button" value="add to cart +" />
+                <input onClick={this.props.onClick} type="button" value="add to cart +" />
             </div>
         )
     }

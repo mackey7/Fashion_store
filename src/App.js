@@ -37,7 +37,7 @@ class App extends Component {
         <TopMenu />
         <Navigation cart={this.props.cart} cartLenght={this.props.cart.length} />
         <Slider slides={carouselSlidesData} />
-        <Products product={this.state.products} onClick={this.handleClick(id)} />
+        <Products product={this.props.products} onClick={this.handleClick} />
         <Footer />
       </React.Fragment >
     );
@@ -45,7 +45,8 @@ class App extends Component {
 }
 const mapStateToProps = (state) => {
   return {
-    cart: state.cart
+    cart: state.cart,
+    products: state.products
   }
 }
 const mapDispatchToProps = (dispatch) => {

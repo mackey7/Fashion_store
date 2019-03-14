@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 import TopMenu from './components/TopMenu/TopMenu'
 import Navigation from './components/Navigation/Navigation.jsx';
 import Slider from './components/Slider/Slider.jsx';
 import Products from './components/Products/Products.jsx';
 import Footer from './components/Footer/Footer.jsx';
-import productsArray from './api/productsArray.js';
+import { addToCart, removeItem } from './actions/actions';
+
 import './App.css';
 
 const carouselSlidesData = [
@@ -21,28 +24,34 @@ const carouselSlidesData = [
 
 
 class App extends Component {
-  state = {
-    cart: [{
-      name: "name",
-      img: "https://mybutik.pl/images/mybutik/3000-4000/13-91-Sukienka-sportowa-KOLOROWE-KWIATY-na-granatowym-tle_%5B3984%5D_480.jpg",
-      price: 100,
-      currency: "PLN",
-      quantity: 10,
-      alt: ""
-    },],
-    products: productsArray,
+
+
+  handleClick = (id) => {
+    console.log(id);
+    this.props.addToCart(id)
   }
+
   render() {
     return (
       <React.Fragment >
         <TopMenu />
-        <Navigation cart={this.state.cart} />
+        <Navigation cart={this.props.cart} cartLenght={this.props.cart.length} />
         <Slider slides={carouselSlidesData} />
-        <Products product={this.state.products} />
+        <Products product={this.state.products} onClick={this.handleClick(id)} />
         <Footer />
       </React.Fragment >
     );
   }
 }
+const mapStateToProps = (state) => {
+  return {
+    cart: state.cart
+  }
+}
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addToCart: (id) => dispatch(addToCart(id))
+  }
+}
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);

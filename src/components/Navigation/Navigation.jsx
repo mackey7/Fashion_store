@@ -34,7 +34,7 @@ export default class Navigation extends Component {
                     <div className="bar-expense">
                         <i class="fas fa-shopping-bag"></i>
                         <div>
-                            <span>0 ITEMS</span>
+                            <span> {this.props.cartLenght} ITEMS</span>
                             <span>$0</span>
                         </div>
 

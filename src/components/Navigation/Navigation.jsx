@@ -14,6 +14,7 @@ class Navigation extends Component {
         )
     }
     render() {
+        let productsLenght = this.props.cart.length + " Items"
         return (
             <nav className="top-navigation">
                 <span className="top-navigation--logo">LOGO</span>
@@ -34,7 +35,7 @@ class Navigation extends Component {
                     <div className="bar-expense">
                         <i className="fas fa-shopping-bag"></i>
                         <div>
-                            <span> {this.props.cart.length} ITEMS</span>
+                            <span> {this.props.cart.length ? productsLenght : "No products"} </span>
                             <span>$0</span>
                         </div>
 

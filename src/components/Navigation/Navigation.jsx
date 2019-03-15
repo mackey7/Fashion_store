@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CartDetails from './CartDetails.jsx';
 import './Navigation.scss'
-
+import { Link } from 'react-router-dom'
 
 import { connect } from "react-redux";
 class Navigation extends Component {
@@ -20,7 +20,8 @@ class Navigation extends Component {
         let productsLenght = this.props.cart.length + " Items"
         return (
             <nav className="top-navigation">
-                <span className="top-navigation--logo">LOGO</span>
+                <Link to="/"> <span className="top-navigation--logo">LOGO</span></Link>
+
                 <ul>
                     <li><a href="">new</a></li>
                     <li><a href="">designers</a></li>

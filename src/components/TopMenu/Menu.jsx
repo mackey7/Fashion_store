@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchBar from './SerachBar.jsx';
+import { Link } from 'react-router-dom'
 
 const Menu = (props) => {
     return (
@@ -8,7 +9,8 @@ const Menu = (props) => {
                 <option value="$US">$US</option>
                 <option value="pln">PLN</option>
             </select>
-            <a href="#">  my account</a>
+            <Link to="/cart"> my account</Link>
+
             <i onClick={props.handleClick} class="fas fa-search"></i>
             {props.search ? <SearchBar /> : null}
         </div>

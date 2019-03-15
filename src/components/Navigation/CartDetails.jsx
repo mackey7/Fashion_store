@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { removeItem } from "../../actions/actions";
 import { connect } from "react-redux";
+import { Link } from 'react-router-dom'
 
 class CartDetails extends Component {
     handleRemove = id => {
@@ -51,7 +52,7 @@ class CartDetails extends Component {
                             <td>{this.props.cartTotal} PLN</td>
                         </tr>
                     </table>
-                    <a href="#">CART</a>
+                    <Link to="/cart">Cart</Link>
                 </div>
             </div >
 

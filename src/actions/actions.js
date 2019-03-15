@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_ITEM, CHNAGE_CURRENCY } from './action-types/action-types';
+import { ADD_TO_CART, REMOVE_ITEM, CHANAGE_CURRENCY } from './action-types/action-types';
 
 export const addToCart = id => {
     return {
@@ -15,7 +15,7 @@ export const removeItem = id => {
 
 export const changeCurrency = e => {
     return {
-        type: CHNAGE_CURRENCY,
+        type: CHANAGE_CURRENCY,
         e
     }
 }

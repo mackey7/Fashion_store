@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_ITEM, CHNAGE_CURRENCY } from '../actions/action-types/action-types';
+import { ADD_TO_CART, REMOVE_ITEM, CHANAGE_CURRENCY } from '../actions/action-types/action-types';
 import productsArray from '../api/productsArray'
 
 
@@ -40,22 +40,19 @@ const reducer = (state = initState, action) => {
 
             }
         }
-        case CHNAGE_CURRENCY: {
-            if (action.e === "USD") {
-                let productCurrency = state.products
-                productCurrency.currency = "USD";
-                return {
-                    ...state,
-                    sproducts: productCurrency
-                }
-            } if (action.e === "PLN") {
-                let productCurrency = state.products
-                productCurrency.currency = "PLN";
-                return {
-                    ...state,
-                    products: productCurrency
-                }
+        case CHANAGE_CURRENCY: {
+
+            let newProducts = state.products.map(item => { item.currency = action.e; return item });
+
+            let newCart = state.cart.map(item => {
+                item.currency = action.e; return item
+            });
+            return {
+                ...state,
+                products: [...newProducts],
+                cart: [...newCart]
             }
+
         }
 
         default:

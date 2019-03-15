@@ -21,12 +21,13 @@ class TopMenu extends Component {
         this.setState(state => ({ menuBar: !state.menuBar }))
     }
     handleChange = (e) => {
-        console.log(e.target.value);
+
         this.props.changeCurrency(e.target.value)
 
     }
 
     render() {
+
         const menuStyle = {
             display: this.state.menuBar ? 'flex' : 'none'
         }
@@ -39,22 +40,25 @@ class TopMenu extends Component {
                 </div>
 
                 <div className="topMenu-account" style={menuStyle} >
-                    <select onChange={this.handleChange}>
-                        <option value="USD">USD</option>
+                    <select onChange={(e) => this.handleChange(e)}>
                         <option value="PLN">PLN</option>
+                        <option value="USD">USD</option>
+
                     </select>
                     <a href="#">  my account</a>
                     <i onClick={() => (this.handleClick)} className="fas fa-search"></i>
                     {this.state.search ? <SearchBar /> : null}
                 </div>
 
-            </div>
+            </div >
         )
     }
 }
 
 const mapDispatchToProps = dispatch => {
+
     return {
+
         changeCurrency: e => dispatch(changeCurrency(e))
     };
 };

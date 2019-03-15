@@ -22,6 +22,7 @@ class MainPage extends Component {
     }
 }
 const mapStateToProps = state => {
+
     return {
         products: state.products
     };

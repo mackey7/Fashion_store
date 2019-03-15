@@ -1,54 +1,29 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-
+import React from "react";
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import TopMenu from "./components/TopMenu/TopMenu";
 import Navigation from "./components/Navigation/Navigation.jsx";
-import Slider from "./components/Slider/Slider.jsx";
-import Products from "./components/Products/Products.jsx";
 import Footer from "./components/Footer/Footer.jsx";
-import { addToCart } from "./actions/actions";
-import { carouselSlidesData } from './api/carouselSlidesData.js'
+import MainPage from './components/MainPage/MainPage.jsx';
+import Cart from './components/Cart/Cart.jsx';
 import "./App.css";
 
-
-
-class App extends Component {
-  handleClick = id => {
-    this.props.addToCart(id);
-  };
-
-  render() {
-    return (
+const App = () => {
+  return (
+    <BrowserRouter>
       <div>
         <TopMenu />
         <Navigation />
-
-
-        <Slider slides={carouselSlidesData} />
-        <Products
-          product={this.props.products}
-          handleClick={this.handleClick}
-        />
+        <Switch>
+          <Route exact path="/" component={MainPage} />
+          <Route path="/cart" component={Cart} />
+        </Switch>
         <Footer />
       </div>
-    );
-  }
+    </BrowserRouter>
+  );
 }
-const mapStateToProps = state => {
-  return {
-    products: state.products
-  };
-};
-const mapDispatchToProps = dispatch => {
-  return {
-    addToCart: id => dispatch(addToCart(id))
-  };
-};
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App);
+export default App;
 
 
 

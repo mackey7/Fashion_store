@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import CartDetails from './CartDetails.jsx';
 import './Navigation.scss'
+
+
 import { connect } from "react-redux";
 class Navigation extends Component {
     state = {
@@ -13,6 +15,7 @@ class Navigation extends Component {
 
         )
     }
+
     render() {
         let productsLenght = this.props.cart.length + " Items"
         return (
@@ -36,7 +39,7 @@ class Navigation extends Component {
                         <i className="fas fa-shopping-bag"></i>
                         <div>
                             <span> {this.props.cart.length ? productsLenght : "No products"} </span>
-                            <span>$0</span>
+                            <span>${this.props.cartTotal}</span>
                         </div>
 
                     </div>
@@ -53,6 +56,7 @@ class Navigation extends Component {
 const mapStateToProps = state => {
     return {
         cart: state.cart,
+        cartTotal: state.cartTotal
 
     };
 };

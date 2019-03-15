@@ -22,7 +22,7 @@ class CartDetails extends Component {
                                     <td>
                                         <p>{item.name}</p>
                                         <span>{item.price}</span>
-                                        <span>1</span>
+                                        <span>{item.quantity}</span>
                                     </td>
 
                                     <td>

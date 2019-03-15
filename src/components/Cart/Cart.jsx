@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { removeItem } from "../../actions/actions";
-
-
+import './cart.scss';
 
 class Cart extends Component {
     handleRemove = id => {
@@ -11,52 +10,31 @@ class Cart extends Component {
     render() {
         return (
 
-            <div id="item" className="cart-details" >
-                <p className="cart-details--title">My Cart</p>
-                <div className="cart-details--item">
+            <div className="CartContainer" >
+                <h2>My Account</h2>
+                {this.props.cart.length ?
+                    (this.props.cart.map((item, index) => (
+                        <div key={index} className="cart-item">
+                            <img className="cart-item__image" src={item.img} alt={item.alt} />
 
-                    <table >
-                        {this.props.cart.length ?
-                            (this.props.cart.map((item, index) => (
 
-                                <tbody key={index}>
-                                    <tr >
-                                        <td><img src={item.img} alt={item.alt} /></td>
+                            <p className="cart-item__name">Name{item.name}</p>
+                            <span className="cart-item__product-price">
+                                Price for one product: {item.price}</span>
+                            <span className="cart-item__quantity">
+                                Amount of products {item.quantity}</span>
 
-                                        <td>
-                                            <p>Name{item.name}</p>
-                                            <span>
-                                                Price for one product{item.price}</span>
-                                            <span>
-                                                Amount of products{item.quantity}</span>
-                                        </td>
+                            <span className="cart-item__expense">Expense {item.price * item.quantity}</span>
+                            <span className="cart-item__delete" onClick={() => { this.handleRemove(item.id) }}><i className="far fa-trash-alt"></i></span>
 
-                                        <td>
-                                            <span>Expense {item.price * item.quantity}</span>
-                                            <span className="delete" onClick={() => { this.handleRemove(item.id) }}><i className="far fa-trash-alt"></i></span>
-                                        </td>
-                                    </tr>
-                                </tbody>
 
-                            ))) : (<p className="cart-details--noProducts"> No products</p>)}
+                        </div>
 
-                    </table>
+                    ))) : (<p> No products</p>)}
 
-                </div>
-                <div className="cart-details--summary">
-                    <table>
-                        <tr>
-                            <td>Shipping</td>
-                            <td>Free</td>
-                        </tr>
-                        <tr>
-                            <td>Total amount </td>
-                            <td>{this.props.cartTotal} PLN</td>
-                        </tr>
-                    </table>
-                    <a href="#">CART</a>
-                </div>
+
             </div >
+
 
 
         )

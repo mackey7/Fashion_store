@@ -1,33 +1,43 @@
 import React, { Component } from 'react';
+import { removeItem } from "../../actions/actions";
+import { connect } from "react-redux";
 
-export default class CartDetails extends Component {
+class CartDetails extends Component {
+    handleRemove = id => {
+        this.props.removeItem(id);
+    };
     render() {
         return (
-            <div id="item" class="cart-details" >
-                <p class="cart-details--title">My Cart</p>
-                <div class="cart-details--item">
+            <div id="item" className="cart-details" >
+                <p className="cart-details--title">My Cart</p>
+                <div className="cart-details--item">
+
                     <table >
                         {this.props.cart.map((item, index) => (
-                            <tr key={index}>
-                                <td><img src={item.img} alt={item.alt} /></td>
 
-                                <td>
-                                    <p>{item.name}</p>
-                                    <span>{item.price}</span>
-                                    <span>1</span>
-                                </td>
+                            <tbody key={index}>
+                                <tr >
+                                    <td><img src={item.img} alt={item.alt} /></td>
 
-                                <td>
-                                    <span>300 PLN</span>
-                                    <span>Usuń</span>
-                                </td>
-                            </tr>
+                                    <td>
+                                        <p>{item.name}</p>
+                                        <span>{item.price}</span>
+                                        <span>1</span>
+                                    </td>
+
+                                    <td>
+                                        <span>300 PLN</span>
+                                        <span onClick={() => { this.handleRemove(item.id) }}>Usuń</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+
                         ))}
 
                     </table>
 
                 </div>
-                <div class="cart-details--summary">
+                <div className="cart-details--summary">
                     <table>
                         <tr>
                             <td>Przesyłka</td>
@@ -46,3 +56,19 @@ export default class CartDetails extends Component {
         )
     }
 }
+const mapStateToProps = state => {
+    return {
+        cart: state.cart,
+
+    };
+};
+const mapDispatchToProps = dispatch => {
+    return {
+        removeItem: id => dispatch(removeItem(id))
+    };
+};
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(CartDetails);

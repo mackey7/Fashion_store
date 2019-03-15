@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SearchBar from './SerachBar.jsx';
-import './topMenu.scss';
 
+import './topMenu.scss';
 
 export default class TopMenu extends Component {
     constructor() {
@@ -28,7 +28,7 @@ export default class TopMenu extends Component {
 
                 <a className="topMenu--telephone" href="tel:+88-23-4567"> custom care: 88-23-4567</a>
                 <div onClick={this.diplayMenu} className="menu-bar">
-                    {this.state.menuBar ? <i class="fas fa-times"></i> : <i class="fas fa-bars"></i>}
+                    {this.state.menuBar ? <i className="fas fa-times"></i> : <i className="fas fa-bars"></i>}
                 </div>
 
                 <div className="topMenu-account" style={menuStyle} >
@@ -37,7 +37,7 @@ export default class TopMenu extends Component {
                         <option value="pln">PLN</option>
                     </select>
                     <a href="#">  my account</a>
-                    <i onClick={this.handleClick} class="fas fa-search"></i>
+                    <i onClick={this.handleClick} className="fas fa-search"></i>
                     {this.state.search ? <SearchBar /> : null}
                 </div>
 

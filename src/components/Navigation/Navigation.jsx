@@ -25,14 +25,14 @@ export default class Navigation extends Component {
                     <li><a href="">clearence</a></li>
                 </ul>
 
-                <div class="bar-cart-container">
+                <div className="bar-cart-container">
                     <div onClick={this.handleClick} className="bar-cart">
                         <span>Your cart</span>
-                        <i class="fas fa-sort-down"></i>
+                        <i className="fas fa-sort-down"></i>
                     </div>
 
                     <div className="bar-expense">
-                        <i class="fas fa-shopping-bag"></i>
+                        <i className="fas fa-shopping-bag"></i>
                         <div>
                             <span> {this.props.cartLenght} ITEMS</span>
                             <span>$0</span>

@@ -20,13 +20,13 @@ class CartDetails extends Component {
                                     <td><img src={item.img} alt={item.alt} /></td>
 
                                     <td>
-                                        <p>{item.name}</p>
-                                        <span>{item.price}</span>
-                                        <span>{item.quantity}</span>
+                                        <p>Nazwa{item.name}</p>
+                                        <span> cena za jeden produkt{item.price}</span>
+                                        <span> Liczba Produktów{item.quantity}</span>
                                     </td>
 
                                     <td>
-                                        <span>300 PLN</span>
+                                        <span>cena łacznie {item.price * item.quantity}</span>
                                         <span onClick={() => { this.handleRemove(item.id) }}>Usuń</span>
                                     </td>
                                 </tr>
@@ -45,7 +45,7 @@ class CartDetails extends Component {
                         </tr>
                         <tr>
                             <td>Łączna kwota</td>
-                            <td>304,95 PLN</td>
+                            <td>{this.props.cartTotal} PLN</td>
                         </tr>
                     </table>
                     <a href="#">CART</a>
@@ -59,6 +59,7 @@ class CartDetails extends Component {
 const mapStateToProps = state => {
     return {
         cart: state.cart,
+        cartTotal: state.cartTotal
 
     };
 };

@@ -31,9 +31,13 @@ const reducer = (state = initState, action) => {
 
         }
         case REMOVE_ITEM: {
+            let productToRemove = state.cart.find(item => action.id === item.id)
             let new_Array = state.cart.filter(item => action.id !== item.id)
+            let NewCartTotal = state.cartTotal - (productToRemove.price * productToRemove.quantity)
             return {
-                ...state, cart: new_Array
+                ...state, cart: new_Array,
+                cartTotal: NewCartTotal
+
             }
         }
 

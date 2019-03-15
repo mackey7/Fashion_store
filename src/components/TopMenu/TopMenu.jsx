@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import SearchBar from './SerachBar.jsx';
+import { connect } from 'react-redux'
+import { changeCurrency } from "../../actions/actions";
 
 import './topMenu.scss';
 
-export default class TopMenu extends Component {
+class TopMenu extends Component {
     constructor() {
         super();
         this.state = {
@@ -17,6 +19,11 @@ export default class TopMenu extends Component {
     }
     diplayMenu = () => {
         this.setState(state => ({ menuBar: !state.menuBar }))
+    }
+    handleChange = (e) => {
+        console.log(e.target.value);
+        this.props.changeCurrency(e.target.value)
+
     }
 
     render() {
@@ -32,12 +39,12 @@ export default class TopMenu extends Component {
                 </div>
 
                 <div className="topMenu-account" style={menuStyle} >
-                    <select>
-                        <option value="$US">$US</option>
-                        <option value="pln">PLN</option>
+                    <select onChange={this.handleChange}>
+                        <option value="USD">USD</option>
+                        <option value="PLN">PLN</option>
                     </select>
                     <a href="#">  my account</a>
-                    <i onClick={this.handleClick} className="fas fa-search"></i>
+                    <i onClick={() => (this.handleClick)} className="fas fa-search"></i>
                     {this.state.search ? <SearchBar /> : null}
                 </div>
 
@@ -45,3 +52,14 @@ export default class TopMenu extends Component {
         )
     }
 }
+
+const mapDispatchToProps = dispatch => {
+    return {
+        changeCurrency: e => dispatch(changeCurrency(e))
+    };
+};
+
+export default connect(
+    null,
+    mapDispatchToProps
+)(TopMenu);

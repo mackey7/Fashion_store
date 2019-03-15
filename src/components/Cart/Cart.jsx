@@ -30,7 +30,7 @@ class Cart extends Component {
 
                         </div>
 
-                    ))) : (<p> No products</p>)}
+                    ))) : (<p className="cart-item__none"> No products</p>)}
 
 
             </div >

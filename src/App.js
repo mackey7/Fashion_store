@@ -6,7 +6,7 @@ import Navigation from "./components/Navigation/Navigation.jsx";
 import Slider from "./components/Slider/Slider.jsx";
 import Products from "./components/Products/Products.jsx";
 import Footer from "./components/Footer/Footer.jsx";
-import { addToCart, removeItem } from "./actions/actions";
+import { addToCart } from "./actions/actions";
 
 import "./App.css";
 

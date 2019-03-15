@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import CartDetails from './CartDetails.jsx';
 import './Navigation.scss'
-
-export default class Navigation extends Component {
+import { connect } from "react-redux";
+class Navigation extends Component {
     state = {
         cartDetails: false,
     }
@@ -34,13 +34,13 @@ export default class Navigation extends Component {
                     <div className="bar-expense">
                         <i className="fas fa-shopping-bag"></i>
                         <div>
-                            <span> {this.props.cartLenght} ITEMS</span>
+                            <span> {this.props.cart.length} ITEMS</span>
                             <span>$0</span>
                         </div>
 
                     </div>
                     {this.state.cartDetails ?
-                        <CartDetails cart={this.props.cart} /> : null}
+                        <CartDetails /> : null}
 
 
                 </div>
@@ -49,3 +49,15 @@ export default class Navigation extends Component {
         )
     }
 }
+const mapStateToProps = state => {
+    return {
+        cart: state.cart,
+
+    };
+};
+
+
+export default connect(
+    mapStateToProps
+
+)(Navigation);

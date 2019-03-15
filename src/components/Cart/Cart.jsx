@@ -18,13 +18,13 @@ class Cart extends Component {
                             <img className="cart-item__image" src={item.img} alt={item.alt} />
 
 
-                            <p className="cart-item__name">Name{item.name}</p>
+                            <p className="cart-item__name">{item.name}</p>
                             <span className="cart-item__product-price">
-                                Price for one product: {item.price}</span>
+                                Price for one product: {item.price}{" "}{item.currency}</span>
                             <span className="cart-item__quantity">
-                                Amount of products {item.quantity}</span>
+                                Amount of products: {item.quantity}</span>
 
-                            <span className="cart-item__expense">Expense {item.price * item.quantity}</span>
+                            <span className="cart-item__expense">Expense: {item.price * item.quantity}{" "}{item.currency}</span>
                             <span className="cart-item__delete" onClick={() => { this.handleRemove(item.id) }}><i className="far fa-trash-alt"></i></span>
 
 

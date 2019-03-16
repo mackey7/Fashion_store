@@ -9,21 +9,20 @@ class TopMenu extends Component {
     constructor() {
         super();
         this.state = {
-            search: false,
+            search: true,
             menuBar: true,
         }
     }
 
     handleClick = () => {
+        console.log("cli")
         this.setState(state => ({ search: !state.search }))
     }
     diplayMenu = () => {
         this.setState(state => ({ menuBar: !state.menuBar }))
     }
     handleChange = (e) => {
-
         this.props.changeCurrency(e.target.value)
-
     }
 
     render() {
@@ -46,7 +45,7 @@ class TopMenu extends Component {
 
                     </select>
                     <a href="#">  my account</a>
-                    <i onClick={() => (this.handleClick)} className="fas fa-search"></i>
+                    <i onClick={this.handleClick} className="fas fa-search"></i>
                     {this.state.search ? <SearchBar /> : null}
                 </div>
 

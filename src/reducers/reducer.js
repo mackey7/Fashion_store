@@ -41,18 +41,13 @@ const reducer = (state = initState, action) => {
             }
         }
         case CHANAGE_CURRENCY: {
-
-            let newProducts = state.products.map(item => { item.currency = action.e; return item });
-
-            let newCart = state.cart.map(item => {
-                item.currency = action.e; return item
-            });
+            const products = state.products.map(item => ({ ...item, currency: action.e, price: item.price * 2 }));
+            const cart = state.cart.map(item => ({ ...item, currency: action.e }));
             return {
                 ...state,
-                products: [...newProducts],
-                cart: [...newCart]
+                products,
+                cart
             }
-
         }
 
         default:

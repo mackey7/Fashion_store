@@ -33,7 +33,7 @@ const reducer = (state = initState, action) => {
         case REMOVE_ITEM: {
             let productToRemove = state.cart.find(item => action.id === item.id)
             let new_Array = state.cart.filter(item => action.id !== item.id)
-            let NewCartTotal = state.cartTotal - (productToRemove.price * productToRemove.quantity)
+            let NewCartTotal = state.cartTotal - (productToRemove.price.toFixed() * productToRemove.quantity.toFixed())
             return {
                 ...state, cart: new_Array,
                 cartTotal: NewCartTotal
@@ -41,12 +41,23 @@ const reducer = (state = initState, action) => {
             }
         }
         case CHANAGE_CURRENCY: {
-            const products = state.products.map(item => ({ ...item, currency: action.e, price: item.price * 2 }));
-            const cart = state.cart.map(item => ({ ...item, currency: action.e }));
-            return {
-                ...state,
-                products,
-                cart
+            if (action.e === "USD") {
+                const products = state.products.map(item => {
+                    return { ...item, currency: action.e, price: item.price / 3.7.toFixed() };
+                });
+                return {
+                    ...state,
+                    products
+                };
+            }
+            if (action.e === "PLN") {
+                const products = state.products.map(item => {
+                    return { ...item, currency: action.e, price: item.price * 3.7.toFixed() };
+                });
+                return {
+                    ...state,
+                    products
+                };
             }
         }
 

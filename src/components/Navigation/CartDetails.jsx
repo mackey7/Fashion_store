@@ -54,25 +54,25 @@ class CartDetails extends Component {
 
 
 
+                </div>
+                <div className="cart-details--summary">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Shipping</td>
+                                <td>Free</td>
+                            </tr>
+                            <tr>
+                                <td>Total amount </td>
+                                <td>{this.props.cartTotal} {this.props.products[0].currency}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <Link to="/cart">Cart</Link>
+                </div>
 
-                    <div className="cart-details--summary">
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td>Shipping</td>
-                                    <td>Free</td>
-                                </tr>
-                                <tr>
-                                    <td>Total amount </td>
-                                    <td>{this.props.cartTotal} {this.props.products[0].currency}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <Link to="/cart">Cart</Link>
-                    </div>
-
-                </div >
             </div >
+
 
         )
     }

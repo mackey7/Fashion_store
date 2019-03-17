@@ -5,7 +5,7 @@ import productsArray from '../api/productsArray'
 const initState = {
     cart: [],
     products: productsArray,
-    cartTotal: 0
+    cartTotal: 0.
 
 }
 
@@ -33,7 +33,7 @@ const reducer = (state = initState, action) => {
         case REMOVE_ITEM: {
             let productToRemove = state.cart.find(item => action.id === item.id)
             let new_Array = state.cart.filter(item => action.id !== item.id)
-            let NewCartTotal = state.cartTotal - (productToRemove.price.toFixed() * productToRemove.quantity.toFixed())
+            let NewCartTotal = state.cartTotal - (productToRemove.price * productToRemove.quantity)
             return {
                 ...state, cart: new_Array,
                 cartTotal: NewCartTotal
@@ -43,7 +43,9 @@ const reducer = (state = initState, action) => {
         case CHANAGE_CURRENCY: {
             if (action.e === "USD") {
                 const products = state.products.map(item => {
-                    return { ...item, currency: action.e, price: item.price / 3.7.toFixed() };
+                    return {
+                        ...item, currency: action.e, price: item.price / 3.7.toFixed()
+                    };
                 });
                 return {
                     ...state,

@@ -9,7 +9,7 @@ class TopMenu extends Component {
     constructor() {
         super();
         this.state = {
-            search: true,
+            search: false,
             menuBar: true,
         }
     }

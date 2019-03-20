@@ -8,9 +8,17 @@ export default class Footer extends Component {
                 <ul>
                     <li>
                         <a href="#">Privacy & Cookies |</a>
+                        </li>
+                        <li>
                         <a href="#">Terms & Conditions |</a>
+                           </li>
+                           <li>
                         <a href="#">Accessibility |</a>
+                           </li>
+                           <li>
                         <a href="#">Store Directory |</a>
+                           </li>
+                           <li>
                         <a href="#">About Us</a>
 
                     </li>

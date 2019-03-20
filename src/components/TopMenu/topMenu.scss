@@ -19,6 +19,9 @@
         text-transform: uppercase;
     }
     &--nav {
+         Link{
+           text-decoration: none;
+        }
         .fa-search {
             height: 100%;
             position: relative;
@@ -51,6 +54,7 @@
                 height: 100px;
             }
         }
+      
         &__account {
             height: 80%;
             position: relative;

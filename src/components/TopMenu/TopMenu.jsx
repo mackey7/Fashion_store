@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SearchBar from './SerachBar.jsx';
 import { connect } from 'react-redux'
 import { changeCurrency } from "../../actions/actions";
+import { Link } from 'react-router-dom'
 
 import './topMenu.scss';
 
@@ -50,7 +51,8 @@ class TopMenu extends Component {
                         <option value="PLN">PLN</option>
                         <option value="USD">USD</option>
                     </select>
-                    <a className="topMenu--nav__account" href="#">  my account</a>
+                     <Link  className="topMenu--nav__account" to="/cart"> my account</Link>
+                   
                     <i onClick={this.diplaySearch} className=" searchIcon fas fa-search"></i>
                     {search}
                 </div>)
@@ -60,7 +62,7 @@ class TopMenu extends Component {
                             <option value="PLN">PLN</option>
                             <option value="USD">USD</option>
                         </select>
-                        <a className="topMenu--nav__account" href="#">  my account</a>
+                          <Link  className="topMenu--nav__account" to="/cart"> my account</Link>
                         <i onClick={this.diplaySearch} className=" searchIcon fas fa-search"></i>
                         {search}
                     </div>)}

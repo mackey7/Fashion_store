@@ -20,7 +20,7 @@ class Navigation extends Component {
         let productsLenght = this.props.cart.length + " Items"
         return (
             <nav className="top-navigation">
-                <Link to="/"> <span className="top-navigation--logo">LOGO</span></Link>
+                <Link className="top-navigation--logo" to="/"> <span >LOGO</span></Link>
 
                 <ul>
                     <li><a href="">new</a></li>

@@ -20,8 +20,8 @@ class CartDetails extends Component {
                                     <th>
                                         Name
                                     </th>
-                                    <th>cena za sztuke </th>
-                                    <th> ilość</th>
+                                    <th>Price for one </th>
+                                    <th> Quantity</th>
                                     <th>
                                         Expense
                                     </th>

@@ -1,6 +1,6 @@
 import { createStore } from 'redux'
 import reducer from '../reducers/reducer';
-import { composeWithDevTools } from "redux-devtools-extension";
+// import { composeWithDevTools } from "redux-devtools-extension";
 
 function saveToLoclStorage(state) {
     try {
@@ -27,7 +27,7 @@ const perisitedState = loadFromLocalStorage();
 export const store = createStore(
     reducer,
     perisitedState,
-    composeWithDevTools()
+    // composeWithDevTools()
 )
 
 store.subscribe(() => saveToLoclStorage(store.getState()))
